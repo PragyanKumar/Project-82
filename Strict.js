@@ -20,21 +20,18 @@ function my_mouse_leave(e){
 }
 canvas.addEventListener("mousemove",my_mouse_move)
 function my_mouse_move(e){
-    currentPosition_of_mouseX=e.clientX-canvas.offsetLeft;
-    currentPosition_of_mouseY=e.clientY-canvas.offsetTop;
-    
-    if (mouseEvent=="mousedown"){
-        console.log("current position of X and Y coordinates is equal to")
-        console.log("X= "+currentPosition_ofX+"Y= "+currentPosition_ofY)
-        ctx.moveTo(currentPosition_ofX,lastPosition_ofY)
-        console.log("current position of X and Y coordinates is equal to")
-        console.log("X= "+currentPosition_of_mouseX+"Y= "+currentPosition_of_mouseY)
+    currentPosition_of_mouseX=e.clientX - canvas.offsetLeft
+    currentPosition_of_mouseY=e.clientY - canvas.offsetTop
+
+    if (mouseEvent == "mouseDown") {
+        console.log("current position of x and y coordinates = ")
+        console.log("x = " + currentPosition_of_mouseX + "y = " + currentPosition_of_mouseY)
+        
         ctx.beginPath()
-        ctx.strokeStyle=color
+        ctx.strokeStyle = color
         ctx.lineWidth=widthOfLine
-        ctx.rect(150,143,430,200)
-        ctx.arc(currentPosition_of_mouseX,currentPosition_of_mouseY,radius,0,2*Math.PI);   
-        ctx.strokeStyle()
+        ctx.arc(currentPosition_of_mouseY,currentPosition_of_mouseY,radius,0,2*Math.PI)
+        ctx.stroke()
     }
     lastPosition_ofX=currentPosition_of_mouseX
     lastPosition_ofY=currentPosition_of_mouseY
